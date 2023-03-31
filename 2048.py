@@ -326,7 +326,7 @@ def main():
                    [0, 0, 0, 0]]
 
     gameplay = True
-    is_init = False
+    is_init = True
 
     while gameplay:
         if is_init:
