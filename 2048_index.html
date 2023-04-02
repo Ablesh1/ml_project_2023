@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script src="2048_index.js"></script>
+        <title>2048 ML</title>
+        <style>
+            body {
+                font-family: "Ubuntu Mono" !important;
+                background: url("https://wallpapercave.com/wp/esSA024.jpg") no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+
+            .tile {
+                height: 13vh;
+                width: 13vh;
+                background-color: white;
+                margin-top: 1vh;
+                margin-bottom: 1vh;
+                padding-top: 30%;
+                padding-bottom: 50%;
+                border-radius: 10px;
+            }
+
+            .col {
+                padding: 0 !important;
+            }
+
+            h1 {
+                color: black;
+            }
+
+            p {
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="text-center container">
+            <div class="row mt-4">
+                <div class="col">
+                    <h1 class="display-3">2048 - ML edition</h1>
+                    <p>by Krzysztof Zerebecki</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="d-flex align-items-center justify-content-center col">
+                    <div class="aspect-ratio" style="background-color: #222222; height: 60vh; width: 60vh; border-radius: 10px">
+                        <div class="container" id="tile-map">
+                            <div class="row">
+                                <div class="col d-flex align-items-center justify-content-center">
+                                    <div class="tile">
+
+                                    </div>
+                                </div>
+                                <div class="col d-flex align-items-center justify-content-center">
+                                    <div class="tile">
+
+                                    </div>
+                                </div>
+                                <div class="col d-flex align-items-center justify-content-center">
+                                    <div class="tile">
+
+                                    </div>
+                                </div>
+                                <div class="col d-flex align-items-center justify-content-center">
+                                    <div class="tile">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-flex align-items-center justify-content-center">
+                                    <div class="tile">
+
+                                    </div>
+                                </div>
+                                <div class="col d-flex align-items-center justify-content-center">
+                                    <div class="tile">
+
+                                    </div>
+                                </div>
+                                <div class="col d-flex align-items-center justify-content-center">
+                                    <div class="tile">
+
+                                    </div>
+                                </div>
+                                <div class="col d-flex align-items-center justify-content-center">
+                                    <div class="tile">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-flex align-items-center justify-content-center">
+                                    <div class="tile">
+
+                                    </div>
+                                </div>
+                                <div class="col d-flex align-items-center justify-content-center">
+                                    <div class="tile">
+
+                                    </div>
+                                </div>
+                                <div class="col d-flex align-items-center justify-content-center">
+                                    <div class="tile">
+
+                                    </div>
+                                </div>
+                                <div class="col d-flex align-items-center justify-content-center">
+                                    <div class="tile">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-flex align-items-center justify-content-center">
+                                    <div class="tile">
+
+                                    </div>
+                                </div>
+                                <div class="col d-flex align-items-center justify-content-center">
+                                    <div class="tile">
+
+                                    </div>
+                                </div>
+                                <div class="col d-flex align-items-center justify-content-center">
+                                    <div class="tile">
+
+                                    </div>
+                                </div>
+                                <div class="col d-flex align-items-center justify-content-center">
+                                    <div class="tile">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 d-flex align-items-center justify-content-center">
+                <h1 class="display-5" id="message"></h1>
+            </div>
+        </div>
+    </body>
+</html>

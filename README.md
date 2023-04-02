@@ -1,10 +1,56 @@
 # machine_learning_project_2023
-Implementation of game logic using reinforcement machine learning (reinforcement learning in a game).   
-Selection of the game and comparison of the effectiveness of algorithms based on reinforcement learning   
-to handle the opponent (comparative approach).
 
-## Authors:
-- [@Ablesh1](https://github.com/Ablesh1)
+## 2048 implementation v 1.0.0
+
+### Authors:
 - [@Krzychu-Z](https://github.com/Krzychu-Z)
-- [@LeMeTwo](https://github.com/LeMeTwo)
-- [@arturstrozik](https://github.com/arturstrozik)
+
+## Setup instruction
+- [x] Download this repository
+- [x] Run client_2048.py
+- [x] Enjoy custom 2048 by launching 2048_index.html ;)
+
+## Biomes edition (current)
+Background image changes for each top value in the game.
+Discover the beauty of the World while merging power-of-2 blocks.
+
+### Sample levels:
+#### Tundra (4)
+![example image](biomes_1.png)
+
+#### Oceanic climate (32)
+![example image](biomes_2.png)
+
+#### Humid subtropical climate (128)
+![example image](biomes_3.png)
+
+## Minimal edition
+Plain game UI based on green gradient that contrasts perfectly with golden tiles.
+
+### Sample levels:
+#### Initial board (0)
+![example image](minimal_2.jpg)
+
+#### 4 level
+![example image](minimal_3.jpg)
+
+#### 32 level
+![example image](minimal_4.jpg)
+
+#### 256 level
+![example image](minimal_5.jpg)
+
+#### 1024 level
+![example image](minimal_1.jpg)
+
+## Technical documentation
+Game works using websockets defined in Python websockets module.\
+Websocket receives game board that is 2D array of ints and performs one swipe.\
+Websocket from backend of this game can easily be used in ML purposes, since it works on standard 2D arrays.
+
+More details can be found inside the code.
+
+Websocket address: ws://localhost:8765
+
+## Known bugs:
+- Game does not display lose or win text and does not close websocket connection
