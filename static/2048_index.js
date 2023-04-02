@@ -154,7 +154,7 @@ $(document).ready(function(){
                     // fontColor = "#FFFFFF";
                     break;
                 case 16:
-                    backgroundUrl = "Polska.png";
+                    backgroundUrl = "../img/Polska.png";
                     // backgroundColor = "#0F5132";
                     // fontColor = "#FFFFFF";
                     break;
