@@ -140,63 +140,39 @@ $(document).ready(function(){
             switch (msg.topValue) {
                 case 2:
                     backgroundUrl = "https://wallpapercave.com/wp/esSA024.jpg";
-                    // backgroundColor = "#051B11";
-                    // fontColor = "#FFFFFF";
                     break;
                 case 4:
                     backgroundUrl = "https://wallpapercrafter.com/desktop/164734-nature-Iceland-waterfall-landscape-water.jpg";
-                    // backgroundColor = "#0A3622";
-                    // fontColor = "#FFFFFF";
                     break;
                 case 8:
                     backgroundUrl = "https://wallpapercave.com/wp/wp4287396.jpg";
-                    // backgroundColor = "#0C4229";
-                    // fontColor = "#FFFFFF";
                     break;
                 case 16:
                     backgroundUrl = "../img/Polska.png";
-                    // backgroundColor = "#0F5132";
-                    // fontColor = "#FFFFFF";
                     break;
                 case 32:
                     backgroundUrl = "https://wallpaperset.com/w/full/f/c/f/50692.jpg";
-                    // backgroundColor = "#146C43";
-                    // fontColor = "#FFFFFF";
                     break;
                 case 64:
                     backgroundUrl = "https://images.wallpaperscraft.com/image/single/field_meadow_grass_143602_1920x1080.jpg";
-                    // backgroundColor = "#198754";
-                    // fontColor = "#FFFFFF";
                     break;
                 case 128:
                     backgroundUrl = "https://wallpapercave.com/wp/wp2249764.jpg";
-                    // backgroundColor = "#479F76";
-                    // fontColor = "#000000";
                     break;
                 case 256:
                     backgroundUrl = "https://wallpapercave.com/wp/wp1823655.jpg";
-                    // backgroundColor = "#75B798";
-                    // fontColor = "#000000";
                     break;
                 case 512:
                     backgroundUrl = "https://s27363.pcdn.co/wp-content/uploads/2022/03/Things-to-Do-in-Joshua-Tree.jpg.optimal.jpg";
-                    // backgroundColor = "#A3CFBB";
-                    // fontColor = "#000000";
                     break;
                 case 1024:
                     backgroundUrl = "https://media.cntraveler.com/photos/54dd13cd72e816e54e62e61c/16:9/w_2560%2Cc_limit/tabernas-desert-spain-maphead.jpg";
-                    // backgroundColor = "#D1E7DD";
-                    // fontColor = "#000000";
                     break;
                 case 2048:
                     backgroundUrl = "https://rare-gallery.com/uploads/posts/1240211-sahara-desert.jpg";
-                    // backgroundColor = "#E0F7ED";
-                    // fontColor = "#000000";
                     break;
                 default:
                     backgroundUrl = "https://wallpapercave.com/wp/esSA024.jpg";
-                    // backgroundColor = "#000000";
-                    // fontColor = "#FFFFFF";
                     break;
             }
 
