@@ -34,4 +34,5 @@ More details can be found inside the code.
 Websocket address: ws://localhost:8765
 
 ## Known bugs:
-- Game does not display lose or win text and does not close websocket connection
+- Game incorrectly assumes losing scenario
+![obraz](https://user-images.githubusercontent.com/47274258/232328581-59002010-d76d-4419-ac0a-3a27a53927a5.png)
