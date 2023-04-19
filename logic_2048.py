@@ -118,7 +118,7 @@ def check_transform(game_board):
     # Check remaining corner
     left_neighbour = game_board[0][3] == game_board[1][3]
     bottom_neighbour = game_board[0][3] == game_board[0][2]
-    if left_neighbour or bottom_neighbour or game_board[0][3] == 0 or game_board[3][0]:
+    if left_neighbour or bottom_neighbour or game_board[0][3] == 0 or game_board[3][0] == 0:
         transformable = True
 
     return transformable
