@@ -112,13 +112,23 @@ def check_transform(game_board):
         for idx in range(0, 3):
             right_neighbour = game_board[idy][idx] == game_board[idy][idx + 1]
             top_neighbour = game_board[idy][idx] == game_board[idy - 1][idx]
-            if right_neighbour or top_neighbour or game_board[idy][idx + 1] == 0 or game_board[idy - 1][idx] == 0:
+            if (
+                right_neighbour
+                or top_neighbour
+                or game_board[idy][idx + 1] == 0
+                or game_board[idy - 1][idx] == 0
+            ):
                 transformable = True
 
     # Check remaining corner
     left_neighbour = game_board[0][3] == game_board[1][3]
     bottom_neighbour = game_board[0][3] == game_board[0][2]
-    if left_neighbour or bottom_neighbour or game_board[0][3] == 0 or game_board[3][0] == 0:
+    if (
+        left_neighbour
+        or bottom_neighbour
+        or game_board[0][3] == 0
+        or game_board[3][0] == 0
+    ):
         transformable = True
 
     return transformable
