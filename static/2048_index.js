@@ -24,77 +24,47 @@ $(document).ready(function(){
                 switch (currentBoard[y - 1][x - 1]){
                     case 2:
                         $(currentTile).empty();
-                        $(currentTile).css("background-color", "#FFFCEF").text(currentBoard[y - 1][x - 1]).css("color", "#000000");
+                        $(currentTile).css("background-color", "#368ead").text(currentBoard[y - 1][x - 1]).css("color", "#000000");
                         break;
                     case 4:
                         $(currentTile).empty();
-                        $(currentTile).css("background-color", "#FFF3CD").text(currentBoard[y - 1][x - 1]).css({
-                                                                                                                "color": "#000000",
-                                                                                                                "font-size": "17px"
-                                                                                                                });
+                        $(currentTile).css("background-color", "#c0ecfc").text(currentBoard[y - 1][x - 1]).css("color", "#000000");
                         break;
                     case 8:
                         $(currentTile).empty();
-                        $(currentTile).css("background-color", "#FFE69C").text(currentBoard[y - 1][x - 1]).css({
-                                                                                                                "color": "#000000",
-                                                                                                                "font-size": "18px"
-                                                                                                                });
+                        $(currentTile).css("background-color", "#87ffd3").text(currentBoard[y - 1][x - 1]).css("color", "#000000");
                         break;
                     case 16:
                         $(currentTile).empty();
-                        $(currentTile).css("background-color", "#FFDA6A").text(currentBoard[y - 1][x - 1]).css({
-                                                                                                                "color": "#000000",
-                                                                                                                "font-size": "19px"
-                                                                                                                });
+                        $(currentTile).css("background-color", "#00FF7F").text(currentBoard[y - 1][x - 1]).css("color", "#000000");
                         break;
                     case 32:
                         $(currentTile).empty();
-                        $(currentTile).css("background-color", "#FFCD39").text(currentBoard[y - 1][x - 1]).css({
-                                                                                                                "color": "#000000",
-                                                                                                                "font-size": "20px"
-                                                                                                                });
+                        $(currentTile).css("background-color", "#00753a").text(currentBoard[y - 1][x - 1]).css("color", "#000000");
                         break;
                     case 64:
                         $(currentTile).empty();
-                        $(currentTile).css("background-color", "#FFC107").text(currentBoard[y - 1][x - 1]).css({
-                                                                                                                "color": "#000000",
-                                                                                                                "font-size": "24px"
-                                                                                                                });
+                        $(currentTile).css("background-color", "#e5ff3b").text(currentBoard[y - 1][x - 1]).css("color", "#000000");
                         break;
                     case 128:
                         $(currentTile).empty();
-                        $(currentTile).css("background-color", "#E8AF07").text(currentBoard[y - 1][x - 1]).css({
-                                                                                                                "color": "#000000",
-                                                                                                                "font-size": "28px"
-                                                                                                                });
+                        $(currentTile).css("background-color", "#f7ba02").text(currentBoard[y - 1][x - 1]).css("color", "#000000");
                         break;
                     case 256:
                         $(currentTile).empty();
-                        $(currentTile).css("background-color", "#CC9A06").text(currentBoard[y - 1][x - 1]).css({
-                                                                                                                "color": "#000000",
-                                                                                                                "font-size": "32px"
-                                                                                                                });
+                        $(currentTile).css("background-color", "#b57602").text(currentBoard[y - 1][x - 1]).css("color", "#000000");
                         break;
                     case 512:
                         $(currentTile).empty();
-                        $(currentTile).css("background-color", "#997404").text(currentBoard[y - 1][x - 1]).css({
-                                                                                                                "color": "#000000",
-                                                                                                                "font-size": "36px"
-                                                                                                                });
+                        $(currentTile).css("background-color", "#fa7a02").text(currentBoard[y - 1][x - 1]).css("color", "#000000");
                         break;
                     case 1024:
                         $(currentTile).empty();
-                        $(currentTile).css("background-color", "#664D03").text(currentBoard[y - 1][x - 1]).css({
-                                                                                                                "color": "#FFFFFF",
-                                                                                                                "font-size": "40px"
-                                                                                                                });
+                        $(currentTile).css("background-color", "#fa2b02").text(currentBoard[y - 1][x - 1]).css("color", "#FFFFFF");
                         break;
                     case 2048:
                         $(currentTile).empty();
-                        $(currentTile).css("background-color", "#332701").text(currentBoard[y - 1][x - 1]).css({
-                                                                                                                "color": "#FFFFFF",
-                                                                                                                "font-size": "44px"
-                                                                                                                });
+                        $(currentTile).css("background-color", "#4d0d00").text(currentBoard[y - 1][x - 1]).css("color", "#FFFFFF");
                         break;
                     default:
                         $(currentTile).empty();
@@ -139,44 +109,45 @@ $(document).ready(function(){
             // Set color of background and title
             switch (msg.topValue) {
                 case 2:
-                    backgroundUrl = "https://wallpapercave.com/wp/esSA024.jpg";
+                    backgroundUrl = "../img/january_pixel.png";
                     break;
                 case 4:
-                    backgroundUrl = "https://wallpapercrafter.com/desktop/164734-nature-Iceland-waterfall-landscape-water.jpg";
+                    backgroundUrl = "../img/february_pixel.png";
                     break;
                 case 8:
-                    backgroundUrl = "https://wallpapercave.com/wp/wp4287396.jpg";
+                    backgroundUrl = "../img/march_pixel.png";
                     break;
                 case 16:
-                    backgroundUrl = "../img/Polska.png";
+                    backgroundUrl = "../img/april_pixel.png";
                     break;
                 case 32:
-                    backgroundUrl = "https://wallpaperset.com/w/full/f/c/f/50692.jpg";
+                    backgroundUrl = "../img/may_pixel.png";
                     break;
                 case 64:
-                    backgroundUrl = "https://images.wallpaperscraft.com/image/single/field_meadow_grass_143602_1920x1080.jpg";
+                    backgroundUrl = "../img/june_pixel.png";
                     break;
                 case 128:
-                    backgroundUrl = "https://wallpapercave.com/wp/wp2249764.jpg";
+                    backgroundUrl = "../img/july_pixel.png";
                     break;
                 case 256:
-                    backgroundUrl = "https://wallpapercave.com/wp/wp1823655.jpg";
+                    backgroundUrl = "../img/august_pixel.png";
                     break;
                 case 512:
-                    backgroundUrl = "https://s27363.pcdn.co/wp-content/uploads/2022/03/Things-to-Do-in-Joshua-Tree.jpg.optimal.jpg";
+                    backgroundUrl = "../img/september_pixel.png";
                     break;
                 case 1024:
-                    backgroundUrl = "https://media.cntraveler.com/photos/54dd13cd72e816e54e62e61c/16:9/w_2560%2Cc_limit/tabernas-desert-spain-maphead.jpg";
+                    backgroundUrl = "../img/october_pixel.png";
                     break;
                 case 2048:
-                    backgroundUrl = "https://rare-gallery.com/uploads/posts/1240211-sahara-desert.jpg";
+                    backgroundUrl = "../img/november_pixel.png";
                     break;
                 default:
-                    backgroundUrl = "https://wallpapercave.com/wp/esSA024.jpg";
+                    backgroundUrl = "../img/january_pixel.png";
                     break;
             }
 
-            $("body").css("background", "url(" + backgroundUrl + ")  no-repeat center center fixed");
+
+            $(".image").css("background-image", "url(" + backgroundUrl + ")");
             $("h1").css("color", "#000000");
             $("p").css("color", "#000000");
         };
@@ -195,7 +166,6 @@ $(document).ready(function(){
 
     // Communication with game logic
     somePackage.connect();
-
 
     // For arrows and wsad
     $(this).on('keydown', function(event) {

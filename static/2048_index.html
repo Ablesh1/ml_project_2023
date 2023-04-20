@@ -10,22 +10,29 @@
         <title>2048 ML</title>
         <style>
             body {
-                font-family: "Ubuntu Mono",sans-serif !important;
-                background: url("https://wallpapercave.com/wp/esSA024.jpg") no-repeat center center fixed;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
+                font-family: "Ubuntu Mono", sans-serif !important;
+            }
+
+            .image {
+                background: url("../img/january_pixel.png") no-repeat center center fixed;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
                 background-size: cover;
+                z-index: -1;
             }
 
             .tile {
                 height: 13vh;
                 width: 13vh;
+                font-size: 40px;
                 background-color: white;
                 margin-top: 1vh;
                 margin-bottom: 1vh;
-                padding-top: 30%;
-                padding-bottom: 50%;
+                padding-top: 15px;
+                padding-bottom: 20px;
                 border-radius: 10px;
             }
 
@@ -43,111 +50,113 @@
         </style>
     </head>
     <body>
-        <div class="text-center container">
-            <div class="row mt-4">
-                <div class="col">
-                    <h1 class="display-3">2048 - ML edition</h1>
-                    <p>by Krzysztof Zerebecki</p>
+        <div class="image">
+            <div class="text-center container">
+                <div class="row mt-4">
+                    <div class="col">
+                        <h1 class="display-3">2048 - ML edition</h1>
+                        <p>by Krzysztof Zerebecki</p>
+                    </div>
                 </div>
-            </div>
-            <div class="row mt-4">
-                <div class="d-flex align-items-center justify-content-center col">
-                    <div class="aspect-ratio" style="background-color: #222222; height: 60vh; width: 60vh; border-radius: 10px">
-                        <div class="container" id="tile-map">
-                            <div class="row">
-                                <div class="col d-flex align-items-center justify-content-center">
-                                    <div class="tile">
+                <div class="row mt-4">
+                    <div class="d-flex align-items-center justify-content-center col">
+                        <div class="aspect-ratio" style="background-color: #222222; height: 60vh; width: 60vh; border-radius: 10px">
+                            <div class="container" id="tile-map">
+                                <div class="row">
+                                    <div class="col d-flex align-items-center justify-content-center">
+                                        <div class="tile">
 
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex align-items-center justify-content-center">
+                                        <div class="tile">
+
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex align-items-center justify-content-center">
+                                        <div class="tile">
+
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex align-items-center justify-content-center">
+                                        <div class="tile">
+
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col d-flex align-items-center justify-content-center">
-                                    <div class="tile">
+                                <div class="row">
+                                    <div class="col d-flex align-items-center justify-content-center">
+                                        <div class="tile">
 
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex align-items-center justify-content-center">
+                                        <div class="tile">
+
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex align-items-center justify-content-center">
+                                        <div class="tile">
+
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex align-items-center justify-content-center">
+                                        <div class="tile">
+
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col d-flex align-items-center justify-content-center">
-                                    <div class="tile">
+                                <div class="row">
+                                    <div class="col d-flex align-items-center justify-content-center">
+                                        <div class="tile">
 
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex align-items-center justify-content-center">
+                                        <div class="tile">
+
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex align-items-center justify-content-center">
+                                        <div class="tile">
+
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex align-items-center justify-content-center">
+                                        <div class="tile">
+
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col d-flex align-items-center justify-content-center">
-                                    <div class="tile">
+                                <div class="row">
+                                    <div class="col d-flex align-items-center justify-content-center">
+                                        <div class="tile">
 
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col d-flex align-items-center justify-content-center">
-                                    <div class="tile">
+                                    <div class="col d-flex align-items-center justify-content-center">
+                                        <div class="tile">
 
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col d-flex align-items-center justify-content-center">
-                                    <div class="tile">
+                                    <div class="col d-flex align-items-center justify-content-center">
+                                        <div class="tile">
 
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col d-flex align-items-center justify-content-center">
-                                    <div class="tile">
+                                    <div class="col d-flex align-items-center justify-content-center">
+                                        <div class="tile">
 
-                                    </div>
-                                </div>
-                                <div class="col d-flex align-items-center justify-content-center">
-                                    <div class="tile">
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col d-flex align-items-center justify-content-center">
-                                    <div class="tile">
-
-                                    </div>
-                                </div>
-                                <div class="col d-flex align-items-center justify-content-center">
-                                    <div class="tile">
-
-                                    </div>
-                                </div>
-                                <div class="col d-flex align-items-center justify-content-center">
-                                    <div class="tile">
-
-                                    </div>
-                                </div>
-                                <div class="col d-flex align-items-center justify-content-center">
-                                    <div class="tile">
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col d-flex align-items-center justify-content-center">
-                                    <div class="tile">
-
-                                    </div>
-                                </div>
-                                <div class="col d-flex align-items-center justify-content-center">
-                                    <div class="tile">
-
-                                    </div>
-                                </div>
-                                <div class="col d-flex align-items-center justify-content-center">
-                                    <div class="tile">
-
-                                    </div>
-                                </div>
-                                <div class="col d-flex align-items-center justify-content-center">
-                                    <div class="tile">
-
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row mt-4 d-flex align-items-center justify-content-center">
-                <h1 class="display-5" id="message"></h1>
+                <div class="row mt-4 d-flex align-items-center justify-content-center">
+                    <h2 class="display-4" id="message"></h2>
+                </div>
             </div>
         </div>
     </body>
