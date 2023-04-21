@@ -7,10 +7,22 @@
 
 ## Setup instruction
 - [x] Download this repository
+- [x] Download required Python packages using pip and requirements.txt
 - [x] Run client_2048.py
 - [x] Enjoy custom 2048 by launching 2048_index.html ;)
 
-## Biomes edition (current)
+## The Seasons edition (v 1.1)
+Background image changes for each top value in the game.
+This edition is to celebrate the ever-changing World!
+
+In this update:
+- now game correctly tells if user has lost or won
+- now win/lose messages have proper colors
+- tiles have now wider range of colors
+- font inside tiles is same sized and well centered
+- new backgrounds minimise the effect of swapping images
+
+## Biomes edition (v 1.0)
 Background image changes for each top value in the game.
 Discover the beauty of the World while merging power-of-2 blocks.
 
@@ -34,5 +46,3 @@ More details can be found inside the code.
 Websocket address: ws://localhost:8765
 
 ## Known bugs:
-- Game incorrectly assumes losing scenario
-![obraz](https://user-images.githubusercontent.com/47274258/232328581-59002010-d76d-4419-ac0a-3a27a53927a5.png)
