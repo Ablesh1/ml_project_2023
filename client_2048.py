@@ -32,14 +32,15 @@ async def game_engine(websocket):
     game_matrix = web_dict["board"]
     web_input = web_dict["direction"]
     is_init = web_dict["seed"]
+    score = web_dict["points"]
 
     if is_init:
         game_matrix = logic_2048.place_new(game_matrix)
         print(game_matrix)
 
     # Single game step
-    game_matrix, success, top_value = logic_2048.transform_matrix(
-        game_matrix, web_input
+    game_matrix, success, top_value, total_score = logic_2048.transform_matrix(
+        game_matrix, web_input, score
     )
     print(game_matrix)
 
@@ -51,6 +52,7 @@ async def game_engine(websocket):
             "board": game_matrix,
             "statusCode": status_code,
             "topValue": top_value,
+            "score": total_score,
         }
         result = json.dumps(result)
 
@@ -64,6 +66,7 @@ async def game_engine(websocket):
             "board": game_matrix,
             "statusCode": status_code,
             "topValue": top_value,
+            "score": total_score,
         }
         result = json.dumps(result)
 
@@ -76,6 +79,7 @@ async def game_engine(websocket):
             "board": game_matrix,
             "statusCode": status_code,
             "topValue": top_value,
+            "score": int(total_score),
         }
         result = json.dumps(result)
 

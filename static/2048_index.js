@@ -1,10 +1,11 @@
 $(document).ready(function(){
     // Initial gameboard
     var currentBoard = [[0, 0, 0, 0],
-                         [0, 0, 0, 0],
-                         [0, 0, 0, 0],
-                         [0, 0, 0, 0]];
+                        [0, 0, 0, 0],
+                        [0, 0, 0, 0],
+                        [0, 0, 0, 0]];
     var seed = true
+    var totalScore = 0;
 
 
     function refreshBoard(requestJson){
@@ -96,6 +97,10 @@ $(document).ready(function(){
             // Read new board
             currentBoard = msg.board;
 
+            // Read new score
+            totalScore = msg.score;
+            $("#score").text("Score: " + totalScore);
+
             // Check status and close connection if lost or won
             if (msg.statusCode === 1){
                 $("#message").text("YOU WON! CONGRATS!").css("color", "#332701");
@@ -172,6 +177,7 @@ $(document).ready(function(){
         var request = {};
         request.board = currentBoard;
         request.seed = seed;
+        request.points = totalScore;
 
         seed = false;
 
@@ -200,6 +206,7 @@ $(document).ready(function(){
         request.board = currentBoard;
         request.direction = "e";
         request.seed = false;
+        request.points = totalScore;
 
         refreshBoard(request);
     })
