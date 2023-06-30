@@ -275,10 +275,49 @@ def win_check(game_board):
 
     for each in game_board:
         for cell in each:
-            if cell == 2048:
+            #Modified goal
+            if cell == 1024:
                 return True
 
     return False
+
+def check_loss_or_stuck(game_board_original, move_dir):
+    """
+    This function checks if the player has lost the game or the move has no effect.
+
+    Args:
+        game_board_original: 2D matrix containing powers of 2
+        move_dir: string from "wsad" set. Defines swiping direction for the board
+
+    Returns:
+        -2 if the player has lost the game, -1 if the move has no effect, 0 otherwise
+    """
+
+    game_board = copy.deepcopy(game_board_original)
+    result = 0
+    # Apply the move and check if the result is the same as the original board
+    if move_dir == "a":
+        game_board = move_left(game_board)
+
+    elif move_dir == "d":
+        game_board = move_right(game_board)
+
+    elif move_dir == "w":
+        game_board = move_up(game_board)
+
+    elif move_dir == "s":
+        game_board = move_down(game_board)
+
+    if np.array_equal(game_board_original, game_board):
+        # The move has no effect, return -1
+        result = -1
+
+    # Check if the game is lost
+    is_playable = check_transform(game_board)
+    if not is_playable:
+        result = -2
+
+    return result
 
 
 def transform_matrix(game_board_original, move_dir):
