@@ -19,6 +19,8 @@ game_matrix = logic_2048.place_new(game_board)
 num_actions = 4
 score = 0
 n = 0
+win_count = 0
+lose_count = 0
 
 # Define the Critic model
 critic_model = tf.keras.Sequential([
@@ -207,6 +209,9 @@ for episode in range(num_episodes):
     print("Nowa epoka. Numer epoki: ", episode)
     trainingTime = 1
     n = 0
+    reward = 0
+    print("Liczba zwycięstw ", win_count)
+    print("Liczba porażek ", lose_count)
 # Training loop
     while trainingTime == 1:
 
@@ -288,6 +293,7 @@ for episode in range(num_episodes):
             critic_model.save('critic_model.h5')
             actor_model.save('actor_model.h5')
             print("Zapisano model!")
+            win_count += 1
             trainingTime = 0
             #time.sleep(10)
             break
@@ -306,6 +312,7 @@ for episode in range(num_episodes):
             critic_model.save('critic_model.h5')
             actor_model.save('actor_model.h5')
             print("Zapisano model!")
+            lose_count += 1
             trainingTime = 0
             #time.sleep(5)
             break
@@ -329,6 +336,9 @@ for episode in range(num_episodes):
         time.sleep(0.001)  # Introduce a delay before the next move
 
 """------------------------------------------------------------------"""
+
+print("Ogólna liczba zwycięstw ", win_count)
+print("Ogólna liczba porażek ", lose_count)
 
 print("Ukończono trening, zapisywanie modelu")
 #Le last save
