@@ -276,7 +276,7 @@ def win_check(game_board):
     for each in game_board:
         for cell in each:
             #Modified goal
-            if cell == 256:
+            if cell == 128:
                 return True
 
     return False
