@@ -5,9 +5,15 @@ import tensorflow as tf
 
 
 # Hyperparameters
-learning_rate = 0.001
+learning_rate = 0.005
 discount_factor = 0.99
-epsilon = 0.1
+epsilon = 0.2
+end = 0
+max_value = 0
+num256 = 0
+num128 = 0
+num512 = 0
+num1024 = 0
 #Number of epochs to train
 num_episodes = 1000
 
@@ -210,8 +216,16 @@ for episode in range(num_episodes):
     trainingTime = 1
     n = 0
     reward = 0
+    score = 0
+    end = 0
+    print("Liczba 128", num128)
+    print("Liczba 256", num256)
+    #print("Liczba 512", num512)
+    #print("Liczba 1024", num1024)
     print("Liczba zwycięstw ", win_count)
     print("Liczba porażek ", lose_count)
+    #print(game_board)
+    #print(game_matrix)
 # Training loop
     while trainingTime == 1:
 
@@ -228,6 +242,48 @@ for episode in range(num_episodes):
         # Apply the chosen action to the game and observe the new state, reward, and whether the game is over
         new_game_matrix, success, reward,  = logic_2048.transform_matrix(game_matrix, action)
         success = logic_2048.check_loss_or_stuck(game_matrix, action)
+
+        if logic_2048.win_check(game_matrix):
+            reward += 1200
+
+        #Apply rewards if game is finished
+        if success == -2:
+            if(end == 0):
+                end = 1
+                if(reward == 2):
+                    reward += 1
+                elif(reward == 4):
+                    reward += 2
+                elif(reward == 8):
+                    reward += 3
+                elif(reward == 16):
+                    reward += 4
+
+                elif(reward == 32):
+                    reward += 5
+
+                elif(reward == 64):
+                    reward += 20
+
+                elif(reward == 128):
+                    num128 += 1
+                    reward += 100
+
+                elif(reward == 256):
+                    num256 += 1
+                    reward += 300
+
+                elif(reward == 512):
+                    num512 += 1
+                    reward += 700
+
+                elif(reward == 1024):
+                    num1024 += 1
+                    reward += 2500
+
+                elif(reward == 2048):
+                    reward += 10000
+
         # Update the game matrix, score, and check if the game is over or won
         game_matrix = new_game_matrix
         score += reward
@@ -243,12 +299,14 @@ for episode in range(num_episodes):
 
         # Compute the TD error
         td_error = target_value - predicted_value
+        if(success == -1):
+            td_error *= -1  # Zwiększamy wartość błędu TD przez pomnożenie przez -1
 
         # Compute the gradients of the Critic model
         # Compute the gradients of the Critic model
         with tf.GradientTape() as tape:
             predicted_value = critic_model(tf.zeros((1, game_board_rows * game_board_cols)))
-            critic_loss = tf.reduce_mean(tf.square(target_value - predicted_value))
+            critic_loss = tf.reduce_mean(tf.square(td_error))
         critic_gradients = tape.gradient(critic_loss, critic_model.trainable_variables)
 
     #    print("Predicted value:", predicted_value)
@@ -279,43 +337,49 @@ for episode in range(num_episodes):
         update_actor_model(actor_gradients, actor_model.trainable_variables)
 
         if logic_2048.win_check(game_matrix):
-            print("------------")
-            print("CONGRATS! YOU WON!")
-            print("Numer epoki ", episode)
-            print("Liczba ruchów ", n)
-            print("Osiągnięta wartość ", reward)
-            print("Wynik: ", score)
-            for row in (game_matrix):
-                print(row)
-            print("------------")
-            reward += 100 #Extra reward for winning the game
-            print("Zapisywanie modelu treningowego ")
-            critic_model.save('critic_model.h5')
-            actor_model.save('actor_model.h5')
-            print("Zapisano model!")
-            win_count += 1
-            trainingTime = 0
-            #time.sleep(10)
-            break
+            if(end == 0):
+                end = 1
+                reward += 10000
+            else:
+                print("------------")
+                print("CONGRATS! YOU WON!")
+                print("Numer epoki ", episode)
+                print("Liczba ruchów ", n)
+                print("Osiągnięta wartość ", reward)
+                print("Wynik: ", score)
+                for row in (game_matrix):
+                    print(row)
+                print("------------")
+                print("Zapisywanie modelu treningowego ")
+                critic_model.save('critic_model.h5')
+                actor_model.save('actor_model.h5')
+                print("Zapisano model!")
+                win_count += 1
+                trainingTime = 0
+                #time.sleep(10)
+                break
 
-        elif success == -2:
-            print("------------")
-            print("Game over")
-            print("Numer epoki ", episode)
-            print("Liczba ruchów ", n)
-            print("Osiągnięta wartość ", reward)
-            print("Wynik: ", score)
-            for row in (game_matrix):
-                print(row)
-            print("------------")
-            print("Zapisywanie modelu treningowego ")
-            critic_model.save('critic_model.h5')
-            actor_model.save('actor_model.h5')
-            print("Zapisano model!")
-            lose_count += 1
-            trainingTime = 0
-            #time.sleep(5)
-            break
+        if success == -2:
+            if (end == 0):
+                end = 1
+            else:
+                print("------------")
+                print("Game over")
+                print("Numer epoki ", episode)
+                print("Liczba ruchów ", n)
+                print("Osiągnięta wartość ", reward)
+                print("Wynik: ", score)
+                for row in (game_matrix):
+                    print(row)
+                print("------------")
+                print("Zapisywanie modelu treningowego ")
+                critic_model.save('critic_model.h5')
+                actor_model.save('actor_model.h5')
+                print("Zapisano model!")
+                lose_count += 1
+                trainingTime = 0
+                #time.sleep(5)
+                break
 
         if(success == 0):
             n += 1
@@ -333,7 +397,7 @@ for episode in range(num_episodes):
             #for row in (game_matrix):
             #    print(row)
             #print("------------")
-        time.sleep(0.001)  # Introduce a delay before the next move
+        time.sleep(0.0001)  # Introduce a delay before the next move
 
 """------------------------------------------------------------------"""
 
