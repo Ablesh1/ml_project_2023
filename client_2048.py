@@ -1,3 +1,4 @@
+import numpy as np
 import websockets
 import json
 import asyncio
@@ -34,13 +35,15 @@ async def game_engine(websocket):
     is_init = web_dict["seed"]
     score = web_dict["points"]
 
+    game_matrix = np.array(game_matrix)
+
     if is_init:
         game_matrix = logic_2048.place_new(game_matrix)
         print(game_matrix)
 
     # Single game step
     game_matrix, success, top_value, total_score = logic_2048.transform_matrix(
-        game_matrix, web_input, score
+        game_matrix, web_input, score, True
     )
     print(game_matrix)
 
