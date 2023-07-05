@@ -42,7 +42,7 @@ async def game_engine(websocket):
         print(game_matrix)
 
     # Single game step
-    game_matrix, success, top_value, total_score = logic_2048.transform_matrix(
+    game_matrix, success, top_value, total_score, _ = logic_2048.transform_matrix(
         game_matrix, web_input, score, True
     )
     print(game_matrix)

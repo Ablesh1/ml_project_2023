@@ -359,7 +359,11 @@ def transform_matrix(game_board, move_dir, total_score, ui_enable):
         ui_enable: boolean telling whether this function should return Python's list for Web game (True) or ndarray for ML
 
     Returns:
+        game_board: changed 2D game table
         check_result: boolean set to false if we can't move in any direction
+        int(np.amax(game_board)): biggest value in the set (needed for UI)
+        score: player's changed total score
+        is_changed: boolean telling whether the board has been changed (needed for ML)
     """
 
     score = total_score
@@ -397,4 +401,4 @@ def transform_matrix(game_board, move_dir, total_score, ui_enable):
     if ui_enable:
         game_board = [[int(cell) for cell in arr] for arr in game_board]
 
-    return game_board, check_result, int(np.amax(game_board)), score
+    return game_board, check_result, int(np.amax(game_board)), score, is_changed
